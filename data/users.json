@@ -1,12 +1,11 @@
 {
-  "users": 
-  [
+  "users": [
     {
       "_id": "5410953eb0e0c0ae25608277",
       "guid": "eab0324c-75ef-49a1-9c49-be2d68f50b96",
       "isActive": true,
       "balance": "$3,585.69",
-      "picture": "http://placehold.it/32x32",
+      "picture": "https://images.theconversation.com/files/651621/original/file-20250226-32-jxjhmy.jpg?ixlib=rb-4.1.0&rect=0%2C377%2C6000%2C3000&q=45&auto=format&w=1356&h=668&fit=crop",
       "age": 30,
       "eyeColor": "blue",
       "name": {
@@ -24,7 +23,7 @@
       "guid": "b26ea5d1-d8db-4106-91a2-57f42a5c7e9e",
       "isActive": false,
       "balance": "$3,230.56",
-      "picture": "http://placehold.it/32x32",
+      "picture": "http://placehold.co/32x32",
       "age": 30,
       "eyeColor": "brown",
       "name": {
@@ -42,7 +41,7 @@
       "guid": "d5464d51-b4bf-4a4b-a5f7-fc2c8933ab45",
       "isActive": true,
       "balance": "$1,668.20",
-      "picture": "http://placehold.it/32x32",
+      "picture": "http://placehold.co/32x32",
       "age": 33,
       "eyeColor": "green",
       "name": {
@@ -60,7 +59,7 @@
       "guid": "5a98f752-22fe-499c-8288-ad0218c89552",
       "isActive": true,
       "balance": "$1,656.46",
-      "picture": "http://placehold.it/32x32",
+      "picture": "http://placehold.co/32x32",
       "age": 35,
       "eyeColor": "brown",
       "name": {
@@ -78,7 +77,7 @@
       "guid": "584de54b-fa74-480d-90a4-b1b38cd02685",
       "isActive": true,
       "balance": "$1,778.30",
-      "picture": "http://placehold.it/32x32",
+      "picture": "http://placehold.co/32x32",
       "age": 23,
       "eyeColor": "green",
       "name": {
