@@ -4,7 +4,6 @@ export const UserResponse = z.object({
   _id: z.string(),
   guid: z.string(),
   isActive: z.boolean(),
-  balance: z.string(),
   picture: z.string(),
   age: z.number(),
   eyeColor: z.string(),

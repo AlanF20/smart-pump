@@ -1,5 +1,5 @@
 export type User = {
-  id: string;
+  _id?: string;
   guid: string;
   isActive: boolean;
   balance: string;

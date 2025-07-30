@@ -15,7 +15,7 @@ loginRouter.post("/", async (req, res, next) => {
       return res.status(400).send("Incorrect email or password");
     }
     const payload = {
-      id: userFromDb.id,
+      id: userFromDb._id,
       email: userFromDb.email,
       name: userFromDb.name,
       isActive: userFromDb.isActive,

@@ -1,6 +1,7 @@
 import { User } from "../../types";
 import db from "../db";
 import { UserResponse } from "./dtos/response-user.dto";
+import { updateUserDto } from "./dtos/update-user.dto";
 
 export const getUsers = async () => {
   await db.read();
@@ -9,7 +10,7 @@ export const getUsers = async () => {
 
 export const getUser = async (id: string) => {
   await db.read();
-  return UserResponse.parse(db?.data?.users.find((user) => user.id === id));
+  return UserResponse.parse(db?.data?.users.find((user) => user._id === id));
 };
 
 export const createUser = async (user: User) => {
@@ -19,20 +20,33 @@ export const createUser = async (user: User) => {
   return UserResponse.parse(user);
 };
 
-export const updateUser = async (id: string, user: User) => {
-  await db.read();
-  if (!db.data) throw new Error("Database not found");
-  const index = db?.data?.users.findIndex((user) => user.id === id);
-  if (!user || !index) throw new Error("User not found");
-  if (index !== -1) {
-    db.data.users[index] = user;
-    await db.write();
-    return user;
+export const updateUser = async (id: string, updatedData: User) => {
+  try {
+    await db.read();
+    const parsedUser = updateUserDto.parse(updatedData);
+    if (!db.data) throw new Error("Database not found");
+    const index = db?.data?.users.findIndex((user) => user._id === id);
+    if (index !== -1) {
+      db.data.users[index] = {
+        ...db.data.users[index],
+        ...parsedUser,
+      };
+      await db.write();
+      return db.data.users[index];
+    }
+    return null;
+  } catch (error: unknown) {
+    console.log(error);
+    throw new Error("Error updating user");
   }
-  return null;
 };
 
 export const getUserByEmail = async (email: string) => {
   await db.read();
   return db?.data?.users.find((user) => user.email === email);
+};
+
+export const getUserBalance = async (id: string) => {
+  await db.read();
+  return db?.data?.users.find((user) => user._id === id)?.balance;
 };
