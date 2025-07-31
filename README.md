@@ -30,3 +30,10 @@ To that end it should not consume your every waking moment. We recommend at max 
 * Fully responsive UI
 * Unit Tests of the API
 * Functional Tests of the UI
+
+### Users Credentials
+ email: henderson.briggs@geeknet.net
+ password": 23derd*334
+
+ email: boyd.small@endipine.biz
+ password: _4rhododfj
