@@ -1,8 +1,8 @@
 import express from "express";
-import userRouter from "./src/users/routes.index";
-import { errorHandler } from "./src/middlewares/error";
-import loginRouter from "./src/login/routes.index";
 import cors from "cors";
+import userRouter from "./users/routes.index";
+import loginRouter from "./login/routes.index";
+import { errorHandler } from "./middlewares/error";
 
 const PORT = process.env.PORT || 3000;
 const app = express();

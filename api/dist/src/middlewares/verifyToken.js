@@ -1,16 +1,19 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.verifyToken = verifyToken;
-var jsonwebtoken_1 = require("jsonwebtoken");
-var secretKey = "123456789";
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const secretKey = "123456789";
 function verifyToken(req, res, next) {
-    var header = req.header("Authorization") || "";
-    var token = header.split(" ")[1];
+    const header = req.header("Authorization") || "";
+    const token = header.split(" ")[1];
     if (!token) {
         throw new Error("No token provided");
     }
     try {
-        var payload = jsonwebtoken_1.default.verify(token, secretKey);
+        const payload = jsonwebtoken_1.default.verify(token, secretKey);
         req.user = {
             id: payload.id,
             name: payload.name,

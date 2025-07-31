@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.errorHandler = errorHandler;
-var zod_1 = require("zod");
+const zod_1 = require("zod");
 function errorHandler(err, req, res, next) {
     console.log(err);
     if (err instanceof zod_1.ZodError) {
-        var issues = err.issues;
+        const issues = err.issues;
         return res.status(400).send({
             message: "Error validating request",
             issues: issues,

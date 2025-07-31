@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateUserDto = void 0;
-var zod_1 = require("zod");
+const zod_1 = require("zod");
 exports.updateUserDto = zod_1.z.object({
     name: zod_1.z
         .object({

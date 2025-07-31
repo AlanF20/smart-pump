@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { BodyLogin } from "./dtos/body-login.dto";
-import jwt from "jsonwebtoken";
 import { getUserByEmail } from "../users/services.index";
+import jwt from "jsonwebtoken";
 
 const provisionalSectret = "123456789";
 const loginRouter = Router();
