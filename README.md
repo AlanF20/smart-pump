@@ -32,12 +32,22 @@ To that end it should not consume your every waking moment. We recommend at max 
 * Functional Tests of the UI
 
 ### Users Credentials
- email: henderson.briggs@geeknet.net
- password": 23derd*334
 
+```js
+ email: henderson.briggs@geeknet.net
+ password: 23derd*334
+```
+
+```js
  email: boyd.small@endipine.biz
  password: _4rhododfj
+```
+---
 
+# Instructions
+I'm using concurrently to run the two projects in parallel.
+You need to run the build command first to generate the dist folder in both projects and then run the start command in the root package.json.
+client will be served on port 4173 and api will be served on port 3000.
 
 ### Start projects
 ```
@@ -46,15 +56,12 @@ npm run build
 npm run start
 ```
 
-I'm using concurrently to run the two projects in parallel.
-You need to run the build command first to generate the dist folder in both projects.
-client will be served on port 4173 and api will be served on port 3000.
-
+Test servers on development mode, should delete or comment the NODE_ENV=production line in the server .env file.
 ### API
 ```
 npm run dev
 ```
-
+The client can run without changes
 ### Client
 ```
 npm run preview
