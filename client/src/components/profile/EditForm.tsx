@@ -1,5 +1,5 @@
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
-import { optional, z } from "zod";
+import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Input } from "../ui/input";
@@ -33,7 +33,7 @@ export function EditForm() {
 			Authorization: `Bearer ${useUserStore.getState().token}`,
 		},
 	}).then(res => res.json())
-	const { data, error } = useSWR<User>(`http://localhost:3000/api/user/session`, fetcher)
+	const { data } = useSWR<User>(`http://localhost:3000/api/user/session`, fetcher)
 	const { mutate } = useSWRConfig()
 	const [loading, setLoading] = useState(false)
 	const form = useForm<z.infer<typeof formSchema>>({

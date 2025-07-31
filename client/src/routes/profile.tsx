@@ -20,8 +20,8 @@ function RouteComponent() {
 	}).then(res => res.json())
 	const token = useUserStore((state) => state.token)
 	const clearToken = useUserStore((state) => state.clearToken)
-	const { data, error } = useSWR<User>(`http://localhost:3000/api/user/session`, fetcher)
-	if (!token) return <Navigate to='/login' />
+	const { data } = useSWR<User>(`http://localhost:3000/api/user/session`, fetcher)
+	if (!token) return <Navigate to='/' />
 	return (
 		<section className="">
 			<header className='w-full flex items-center justify-center text-2xl font-semibold'>

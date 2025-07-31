@@ -57,7 +57,7 @@ export function LoginForm() {
 	}
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 text-[1.6rem]">
+			<form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-4 text-[1.6rem]">
 				<FormField
 					control={form.control}
 					name="email"
@@ -81,7 +81,7 @@ export function LoginForm() {
 								<span className='text-slate-500 text-sm'>Forgot password?</span>
 							</div>
 							<FormControl>
-								<Input type='password' placeholder="shadcn" {...field} />
+								<Input type='password' placeholder="••••••••" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>

@@ -1,4 +1,4 @@
-import { Banknote, Check, DollarSign, DollarSignIcon, Wallet } from "lucide-react";
+import { Banknote, Check, Wallet } from "lucide-react";
 import { useUserStore } from "../../stores/user";
 import { Button } from "../ui/button";
 import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "../ui/drawer";
@@ -11,7 +11,7 @@ export function Balance() {
 			Authorization: `Bearer ${useUserStore.getState().token}`,
 		},
 	}).then(res => res.json())
-	const { data, error } = useSWR<{ balance: string }>(`http://localhost:3000/api/user/balance`, fetcher)
+	const { data } = useSWR<{ balance: string }>(`http://localhost:3000/api/user/balance`, fetcher)
 	return (
 		<Drawer>
 			<DrawerTrigger asChild>
