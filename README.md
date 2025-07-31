@@ -37,3 +37,25 @@ To that end it should not consume your every waking moment. We recommend at max 
 
  email: boyd.small@endipine.biz
  password: _4rhododfj
+
+
+### Start projects
+```
+npm install
+npm run build
+npm run start
+```
+
+I'm using concurrently to run the two projects in parallel.
+You need to run the build command first to generate the dist folder in both projects.
+client will be served on port 4173 and api will be served on port 3000.
+
+### API
+```
+npm run dev
+```
+
+### Client
+```
+npm run preview
+```
